@@ -1,0 +1,65 @@
+@use '../../scss/utilities';
+
+.popup {
+  @include utilities.flex($direction: column, $gap: 0.75rem);
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  width: 300px;
+  margin-top: 1rem;
+  padding: 1.25rem 1rem;
+  border-radius: 10px;
+  background: var(--body-bg-color);
+  color: var(--text-color);
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+
+  .avatar {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      visibility: hidden;
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+    }
+
+    &:hover {
+      img {
+        filter: brightness(50%);
+      }
+
+      svg {
+        visibility: visible;
+      }
+    }
+  }
+
+  .username {
+    margin-top: 0.5rem;
+    font-weight: 700;
+  }
+
+  .btn {
+    background: var(--primary-color);
+    color: #fff;
+  }
+}

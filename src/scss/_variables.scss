@@ -1,0 +1,50 @@
+// Primary
+$bright-blue: hsl(220, 98%, 61%);
+$check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+// Light theme
+$very-light-gray: hsl(0, 0%, 98%);
+$very-light-grayish-blue: hsl(236, 33%, 92%);
+$light-grayish-blue: hsl(233, 11%, 84%);
+$dark-grayish-blue: hsl(236, 9%, 61%);
+$very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+// Dark theme
+$very-dark-blue: hsl(235, 21%, 11%);
+$very-dark-desaturated-blue: hsl(235, 24%, 19%);
+$light-grayish-blue: hsl(234, 39%, 85%);
+$light-grayish-blue-hover: hsl(236, 33%, 92%);
+$dark-grayish-blue: hsl(234, 11%, 52%);
+$very-dark-grayish-blue: hsl(233, 14%, 35%);
+
+body {
+  --primary-color: #{$bright-blue};
+  --input-checked-bg-color: #{$check-background};
+  --input-border-color: #{$light-grayish-blue};
+  --body-bg-color: #{$very-light-gray};
+  --todo-bg-color: #fff;
+  --text-color: #{$very-dark-grayish-blue};
+  --text-muted-color: #{$dark-grayish-blue};
+  --filter-hover-text-color: #{$very-dark-blue};
+  --border-color: #{$very-light-grayish-blue};
+  --bg-path: url('../assets/bg-desktop-light.jpg');
+}
+
+body.dark-theme {
+  --body-bg-color: #{$very-dark-blue};
+  --todo-bg-color: #{$very-dark-desaturated-blue};
+  --text-color: #{$light-grayish-blue};
+  --filter-hover-text-color: #{$light-grayish-blue-hover};
+  --border-color: #{$very-dark-grayish-blue};
+  --bg-path: url('../assets/bg-desktop-dark.jpg');
+}
+
+@media (max-width: 678px) {
+  body {
+    --bg-path: url('../assets/bg-mobile-light.jpg');
+  }
+
+  body.dark-theme {
+    --bg-path: url('../assets/bg-mobile-dark.jpg');
+  }
+}

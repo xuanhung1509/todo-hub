@@ -1,0 +1,31 @@
+@use '../../scss/utilities';
+
+.theme-toggler {
+  .theme-toggler-btn {
+    height: 20px;
+    width: 40px;
+    padding: 3px;
+    border-radius: 20px;
+    background: var(--body-bg-color);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+    .switch {
+      @include utilities.flex($gap: 0);
+      background: var(--primary-color);
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      transition: transform 0.15s ease;
+    }
+  }
+}
+
+body.dark-theme .theme-toggler-btn {
+  background: var(--primary-color);
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+  .switch {
+    background: #fff;
+    transform: translateX(20px);
+  }
+}

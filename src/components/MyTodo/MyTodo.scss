@@ -1,0 +1,18 @@
+@use '../../scss/utilities';
+
+.my-todo {
+  @include utilities.flex($direction: column, $gap: 2rem);
+  padding: 0 2rem;
+
+  .tip {
+    display: block;
+    margin: 0 0 2rem;
+    color: var(--text-muted-color);
+  }
+}
+
+@media (max-width: 576px) {
+  .my-todo {
+    padding: 0;
+  }
+}

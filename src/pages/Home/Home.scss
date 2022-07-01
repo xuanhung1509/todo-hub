@@ -1,0 +1,62 @@
+@use '../../scss/utilities';
+
+.header {
+  @include utilities.flex($justify-content: space-between);
+  padding: 3rem 0;
+
+  .logo {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 8px;
+
+    & + div {
+      @include utilities.flex();
+
+      .user-icon {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+
+        .avatar {
+          cursor: pointer;
+
+          img {
+            pointer-events: none;
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  margin-bottom: 3rem;
+
+  .tab-list {
+    list-style: none;
+    @include utilities.flex();
+
+    .tab-item {
+      @include utilities.flex();
+      cursor: pointer;
+      flex: 1;
+      max-width: 160px;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      background: var(--todo-bg-color);
+      color: var(--text-color);
+      box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.15);
+
+      &.active {
+        background: var(--primary-color);
+        color: #fff;
+      }
+    }
+  }
+}

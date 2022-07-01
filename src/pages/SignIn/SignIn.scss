@@ -1,0 +1,106 @@
+@use '../../scss/utilities';
+
+.signin {
+  padding: 4rem 0 2rem;
+
+  .heading {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .subheading {
+    margin-bottom: 3rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .signin-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: var(--todo-bg-color);
+    color: var(--text-color);
+    box-shadow: -5px 10px 50px rgba(0, 0, 0, 0.15);
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.6rem;
+        border: 1px solid var(--input-border-color);
+        border-radius: 3px;
+        font-size: 1rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .error {
+        display: block;
+        margin-top: 0.5rem;
+        color: red;
+        font-size: 14px;
+      }
+    }
+
+    .forgot-password-bar {
+      text-align: right;
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+    }
+
+    .signin-bar {
+      @include utilities.flex($justify-content: space-between);
+      margin-top: 1rem;
+
+      .signin-text {
+        font-size: 1.2rem;
+      }
+
+      .signin-btn {
+        padding-right: 0;
+        background: transparent;
+        color: #fff;
+        font-size: inherit;
+
+        svg {
+          fill: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .signup-bar,
+  .gohome-bar {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .signup-bar {
+    a {
+      color: var(--primary-color);
+    }
+  }
+
+  .gohome-bar {
+    a {
+      @include utilities.flex($inline: true);
+      background: var(--border-color);
+      color: var(--text-color);
+    }
+  }
+}
