@@ -42,9 +42,11 @@ function TodoList() {
 
     const result = draggables.reduce(
       (closest, child) => {
+        // Get the distance from mouse's y position to the middle of the element
         const box = child.getBoundingClientRect();
         const offset = y - (box.top + box.height / 2);
 
+        // Return the element that is after and closest to the mouse's y position
         if (offset < 0 && offset > closest.offset) {
           return { offset, element: child };
         } else {
@@ -91,6 +93,7 @@ function TodoList() {
 
   useEffect(() => {
     showAllTodos();
+    // eslint-disable-next-line
   }, []);
 
   if (filteredTodos)

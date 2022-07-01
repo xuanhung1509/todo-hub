@@ -15,6 +15,7 @@ function ThemeToggler() {
       '(prefers-color-scheme: dark)'
     ).matches;
     if (prefersDarkScheme) setTheme('dark');
+    // eslint-disable-next-line
   }, []);
 
   // Toggle dark theme on switch
