@@ -25,8 +25,6 @@ function LeaderBoard() {
         });
       });
 
-      console.log(users);
-
       // Sort the 3 most users having the most completed tasks
       let sortedUsers = users.sort((a, b) => b.completed - a.completed);
       sortedUsers = sortedUsers.slice(0, 3);

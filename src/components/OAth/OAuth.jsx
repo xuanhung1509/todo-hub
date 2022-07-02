@@ -27,6 +27,8 @@ function OAuth() {
         username: user.displayName,
         email: user.email,
         timestamp: serverTimestamp(),
+        avatarURL: user.photoURL,
+        completed: 0,
       });
     }
 
