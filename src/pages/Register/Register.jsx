@@ -203,7 +203,7 @@ function Register() {
         <OAuth />
 
         <div className='signup-bar'>
-          <Link to='/sign-in' className='btn'>
+          <Link to='/sign-in' className='link'>
             Sign In Instead
           </Link>
         </div>

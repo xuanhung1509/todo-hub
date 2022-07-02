@@ -11,3 +11,14 @@
 .btn {
   @include btn;
 }
+
+.link {
+  @include btn;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--primary-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

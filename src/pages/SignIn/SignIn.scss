@@ -56,11 +56,6 @@
 
     .forgot-password-bar {
       text-align: right;
-
-      a {
-        color: var(--primary-color);
-        text-decoration: none;
-      }
     }
 
     .signin-bar {
@@ -88,12 +83,6 @@
   .gohome-bar {
     margin-top: 2rem;
     text-align: center;
-  }
-
-  .signup-bar {
-    a {
-      color: var(--primary-color);
-    }
   }
 
   .gohome-bar {

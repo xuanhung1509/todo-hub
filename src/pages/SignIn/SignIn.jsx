@@ -87,7 +87,9 @@ function SignIn() {
           ))}
 
           <div className='forgot-password-bar'>
-            <Link to='/forgot-password'>Forgot Password?</Link>
+            <Link to='/forgot-password' className='link'>
+              Forgot Password?
+            </Link>
           </div>
           <div className='signin-bar'>
             <div className='signin-text'>Sign In</div>
@@ -100,7 +102,7 @@ function SignIn() {
         <OAuth />
 
         <div className='signup-bar'>
-          <Link to='/sign-up' className='btn'>
+          <Link to='/sign-up' className='link'>
             Sign Up Instead
           </Link>
         </div>

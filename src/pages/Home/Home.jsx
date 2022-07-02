@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import { useTodoContext } from '../../context/TodoContext';
 import iconUser from '../../assets/icon-user.png';
 import ThemeToggler from '../../components/ThemeToggler/ThemeToggler';
@@ -55,13 +54,7 @@ function Home() {
       </nav>
       {!isLoading && (
         <div className='content'>
-          {activeTab === 'LeaderBoard' ? (
-            <LeaderBoard />
-          ) : currentUser ? (
-            <MyTodo />
-          ) : (
-            <Navigate to='/sign-in' />
-          )}
+          {activeTab === 'LeaderBoard' ? <LeaderBoard /> : <MyTodo />}
         </div>
       )}
     </>
