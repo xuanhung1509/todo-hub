@@ -27,6 +27,7 @@ body {
   --text-muted-color: #{$dark-grayish-blue};
   --filter-hover-text-color: #{$very-dark-blue};
   --border-color: #{$very-light-grayish-blue};
+  --shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
   --bg-path: url('../assets/bg-desktop-light.jpg');
 }
 

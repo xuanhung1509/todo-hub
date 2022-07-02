@@ -3,7 +3,16 @@
 .todo-list {
   list-style: none;
   width: 100%;
-  box-shadow: -5px 10px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow);
+
+  .remaining,
+  .btn {
+    padding: 6px 12px;
+    background: transparent;
+    color: var(--text-muted-color);
+    font-size: 13px;
+    font-weight: 700;
+  }
 
   .bottom {
     @include utilities.flex($justify-content: space-between, $gap: 0);
@@ -12,40 +21,24 @@
     background: var(--todo-bg-color);
     border-radius: 3px;
 
-    .btn {
-      padding: 6px 12px;
-      background: transparent;
-      color: var(--text-muted-color);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
     .remaining {
-      order: 1;
-      padding: 6px 12px;
-      color: var(--text-muted-color);
-      font-size: 13px;
+      font-weight: 400;
     }
+  }
+}
 
-    .clear {
-      order: 3;
-    }
+.filters {
+  @include utilities.flex();
+}
 
-    .clear,
-    .filter {
-      &:hover {
-        color: var(--filter-hover-text-color);
-      }
+.clear,
+.filter {
+  &:hover {
+    color: var(--filter-hover-text-color) !important;
+  }
 
-      &.active {
-        color: var(--primary-color);
-      }
-    }
-
-    .filters {
-      order: 2;
-      @include utilities.flex();
-    }
+  &.active {
+    color: var(--primary-color) !important;
   }
 }
 
@@ -128,9 +121,7 @@
 
   .close {
     visibility: hidden;
-    padding: 6px 12px;
-    color: var(--text-muted-color);
-    background: transparent;
+    padding: 0;
   }
 
   &:hover .close {
@@ -140,50 +131,29 @@
 
 @media (max-width: 678px) {
   .todo-list {
-    box-shadow: none;
+    .todo-item {
+      padding: 1rem;
 
-    .bottom {
-      padding: 0;
-
-      .remaining,
-      .clear,
-      .filters {
-        padding: 1rem;
-      }
-
-      .remaining {
-        order: 1;
-      }
-
-      .clear {
-        order: 2;
-      }
-
-      .filters {
-        order: 3;
-        position: relative;
-        flex-basis: 100%;
-        padding-top: 1.5rem;
-        box-shadow: 0 8px 15px -15px rgba(0, 0, 0, 0.1);
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0px;
-          left: 0;
-          height: 10px;
-          width: 100%;
-          background: var(--body-bg-color);
-        }
+      label {
+        padding-left: 2rem;
       }
     }
   }
 
-  .todo-item {
-    padding: 1rem;
+  .filters {
+    width: 100%;
+    background: var(--todo-bg-color);
+    margin-top: -1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 3px;
+    box-shadow: var(--shadow);
 
-    label {
-      padding-left: 2rem;
+    .filter {
+      padding: 6px 12px;
+      background: transparent;
+      color: var(--text-muted-color);
+      font-size: 13px;
+      font-weight: 700;
     }
   }
 }

@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useTodoContext } from '../../../context/TodoContext';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 import TodoItem from './TodoItem';
 import './TodoList.scss';
 
@@ -22,6 +23,7 @@ function TodoList() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [dragging, setDragging] = useState(null);
   const listRef = useRef();
+  const isMobile = useMediaQuery('(max-width: 678px)');
 
   const handleClickFilter = (filter) => {
     filter.action();
@@ -96,37 +98,44 @@ function TodoList() {
     // eslint-disable-next-line
   }, []);
 
+  const filtersBlock = (
+    <div className='filters'>
+      {filters.map((filter) => (
+        <button
+          key={filter.name}
+          className={`btn filter ${filter.name === activeFilter && 'active'}`}
+          onClick={() => handleClickFilter(filter)}
+        >
+          {filter.name}
+        </button>
+      ))}
+    </div>
+  );
+
   if (filteredTodos)
     return (
-      <ul className='todo-list' ref={listRef} onDragOver={handleDragOver}>
-        {filteredTodos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            dragging={dragging}
-            setDragging={setDragging}
-          />
-        ))}
-        <div className='bottom'>
-          <div className='remaining'>{countIncompletedTodos()} items left</div>
-          <button className='btn clear' onClick={clearCompletedTodos}>
-            Clear Completed
-          </button>
-          <div className='filters'>
-            {filters.map((filter) => (
-              <button
-                key={filter.name}
-                className={`btn filter ${
-                  filter.name === activeFilter && 'active'
-                }`}
-                onClick={() => handleClickFilter(filter)}
-              >
-                {filter.name}
-              </button>
-            ))}
+      <>
+        <ul className='todo-list' ref={listRef} onDragOver={handleDragOver}>
+          {filteredTodos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              dragging={dragging}
+              setDragging={setDragging}
+            />
+          ))}
+          <div className='bottom'>
+            <div className='remaining'>
+              {countIncompletedTodos()} items left
+            </div>
+            {!isMobile && filtersBlock}
+            <button className='btn clear' onClick={clearCompletedTodos}>
+              Clear Completed
+            </button>
           </div>
-        </div>
-      </ul>
+        </ul>
+        <>{isMobile && filtersBlock}</>
+      </>
     );
 }
 export default TodoList;

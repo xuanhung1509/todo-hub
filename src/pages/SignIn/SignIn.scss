@@ -24,7 +24,7 @@
     border-radius: 10px;
     background: var(--todo-bg-color);
     color: var(--text-color);
-    box-shadow: -5px 10px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow);
 
     .form-group {
       margin-bottom: 1rem;
