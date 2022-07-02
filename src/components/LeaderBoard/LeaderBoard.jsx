@@ -25,6 +25,8 @@ function LeaderBoard() {
         });
       });
 
+      console.log(users);
+
       // Sort the 3 most users having the most completed tasks
       let sortedUsers = users.sort((a, b) => b.completed - a.completed);
       sortedUsers = sortedUsers.slice(0, 3);
@@ -53,7 +55,7 @@ function LeaderBoard() {
       <ul className='user-list'>
         {users.map((user, index) => (
           <li key={user.id} className='user-item'>
-            <div className='index'>{index}</div>
+            <div className='index'>{index + 1}</div>
             <div className='avatar'>
               <img src={user.avatarURL || iconUser} alt='' />
             </div>

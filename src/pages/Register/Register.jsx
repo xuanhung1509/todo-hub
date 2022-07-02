@@ -115,6 +115,7 @@ function Register() {
       delete formDataCopy.password;
       delete formDataCopy.password2;
       formDataCopy.timestamp = serverTimestamp();
+      formDataCopy.completed = 0;
 
       await setDoc(doc(db, 'users', user.uid), formDataCopy);
 
