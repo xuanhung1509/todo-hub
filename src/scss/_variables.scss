@@ -27,7 +27,7 @@ body {
   --text-muted-color: #{$dark-grayish-blue};
   --filter-hover-text-color: #{$very-dark-blue};
   --border-color: #{$very-light-grayish-blue};
-  --shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
+  --shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
   --bg-path: url('../assets/bg-desktop-light.jpg');
 }
 
@@ -37,6 +37,7 @@ body.dark-theme {
   --text-color: #{$light-grayish-blue};
   --filter-hover-text-color: #{$light-grayish-blue-hover};
   --border-color: #{$very-dark-grayish-blue};
+  --shadow: 0px 1px 4px rgba(255, 255, 255, 0.16);
   --bg-path: url('../assets/bg-desktop-dark.jpg');
 }
 

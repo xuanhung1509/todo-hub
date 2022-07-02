@@ -2,6 +2,7 @@
 
 .my-todo {
   @include utilities.flex($direction: column, $gap: 2rem);
+  margin-bottom: 2rem;
   padding: 0 2rem;
 
   .tip {
@@ -10,7 +11,7 @@
   }
 
   .signin-reminder {
-    margin: 0.5rem 0 2rem;
+    margin-top: 0.5rem;
     color: var(--text-color);
 
     .link {

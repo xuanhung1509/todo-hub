@@ -23,11 +23,14 @@ Users should be able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
+
+**Bonus**
+
 - Drag and drop to reorder items on the list
 - See the 3 most active users
 - Sign up/ Sign in using email and password or Google account
 - Get password reset email if forgot password
-- Upload avatar
+- Change profile picture
 
 ### Screenshot
 
