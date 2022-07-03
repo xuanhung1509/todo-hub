@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import useLocalStorageState from 'use-local-storage-state';
 
 function useDarkMode() {
-  const [theme, setTheme] = useLocalStorageState('theme', 'light');
+  const [theme, setTheme] = useLocalStorageState('theme', {
+    defaultValue: 'light',
+  });
 
   // Initially set theme to dark if OS theme is dark
   useEffect(() => {
