@@ -54,6 +54,17 @@ function Register() {
     }));
   };
 
+  const handleBlur = (e) => {
+    const { id, value } = e.target;
+
+    if (value.trim().length === 0) {
+      setErrors((prevState) => ({
+        ...prevState,
+        [id]: 'This field is required.',
+      }));
+    }
+  };
+
   const isUsernameTaken = async () => {
     let taken = false;
 
@@ -71,11 +82,19 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Check if all fields are filled
+    for (let key in formData) {
+      if (formData[key].length === 0) {
+        toast.error('Please fill in all fields.');
+        return;
+      }
+    }
+
     // Check if username is taken
     if (await isUsernameTaken()) {
       setErrors((prevState) => ({
         ...prevState,
-        username: 'Username already taken.',
+        username: 'Username is already taken.',
       }));
       return;
     }
@@ -187,6 +206,7 @@ function Register() {
                 id={id}
                 value={value}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
               <small className='error'>{errors[id]}</small>
             </div>

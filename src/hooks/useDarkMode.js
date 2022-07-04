@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import useLocalStorageState from 'use-local-storage-state';
 
 function useDarkMode() {
-  const [theme, setTheme] = useLocalStorageState('theme', {
-    defaultValue: 'light',
+  const [isEnabled, setIsEnabled] = useLocalStorageState('dark-theme', {
+    defaultValue: false,
   });
 
   // Initially set theme to dark if OS theme is dark
@@ -12,19 +12,18 @@ function useDarkMode() {
       '(prefers-color-scheme: dark)'
     ).matches;
 
-    if (prefersDarkScheme) setTheme('dark');
+    if (prefersDarkScheme) setIsEnabled(true);
     // eslint-disable-next-line
   }, []);
 
   // Toggle dark theme on switch
   useEffect(() => {
-    if (theme === 'dark') {
-      document.body.classList.add('dark-theme');
-    } else if (theme === 'light') {
-      document.body.classList.remove('dark-theme');
-    }
-  }, [theme]);
+    const className = 'dark-theme';
+    const bodyClass = window.document.body.classList;
 
-  return { theme, setTheme };
+    isEnabled ? bodyClass.add(className) : bodyClass.remove(className);
+  }, [isEnabled]);
+
+  return [isEnabled, setIsEnabled];
 }
 export default useDarkMode;
