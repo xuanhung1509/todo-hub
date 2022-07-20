@@ -2,7 +2,6 @@
 
 .my-todo {
   @include utilities.flex($direction: column, $gap: 2rem);
-  margin-bottom: 2rem;
   padding: 0 2rem;
 
   .tip {
