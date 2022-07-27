@@ -1,6 +1,6 @@
-# Frontend Mentor - Todo app solution
+# TodoHub
 
-This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
+Inspired from the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). I took it a step further from the original challenge by implementing Firebase authentication and file uploads.
 
 ## Table of contents
 
@@ -27,7 +27,7 @@ Users should be able to:
 **Bonus**
 
 - Drag and drop to reorder items on the list
-- See the 3 most active users
+- See the most active users on the Leaderboard
 - Sign up/ Sign in using email and password or Google account
 - Get password reset email if forgot password
 - Change profile picture
